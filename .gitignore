@@ -5,3 +5,4 @@ SSH_Keys/
 *__pycache__/
 *__pycache__*
 *.sqlite*
+*.vscode*/
