@@ -1,10 +1,10 @@
 /*Dropdown Theme*/
 .dropdown:hover > div,
 .dropdown.selected > div{
-    background-color: rgb(216, 137, 9);
+    background-color: rgb(193, 199, 12);
 }
 .dropdown > div > * {
-    background-color: rgb(50, 108, 3);
+    background-color: rgb(4, 57, 91);
 }
 /*Anchor Theme*/
 a:link{
@@ -40,7 +40,7 @@ header > nav > ul > li{
     background-color: rgba(255, 0, 0, 0)
 }
 header > nav > ul > li:hover{
-    background-color: rgba(187, 124, 42, 0.8)
+    background-color: rgba(232, 174, 27, 0.8)
 }
 /*Header Logo Theme*/
 #logo{

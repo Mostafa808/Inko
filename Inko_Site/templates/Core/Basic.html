@@ -26,12 +26,12 @@
         <!-- Header -->
         <header>
             <nav>
+                <div id="logo">
+                    <a href= "{{site_map.home}}">
+                        <img src="{% static 'image/icon/logo.jpg' %}" title="logo image" alt="logo image">
+                    </a>
+                </div>
                 <ul>
-                    <li id="logo">
-                        <a href= "{{site_map.home}}">
-                            <img src="{% static 'image/icon/logo.jpg' %}" title="logo image" alt="logo image">
-                        </a>
-                    </li>
                     <li>
                         <a href= "{{site_map.home}}">
                             Home
@@ -47,18 +47,18 @@
                             Templates
                         </a>
                     </li>
-                    <li id="profile" class="dropdown">
-                        <a href= "{{site_map.profile}}">
-                            Profile
-                        </a>
-                        <div>
-                            <a>login</a>
-                            <a>sign-up</a>
-                            <a>logout</a>
-                            <div>nothing</div>
-                        </div>
-                    </li>
                 </ul>
+                <div id="profile" class="dropdown">
+                    <a href= "{{site_map.profile}}">
+                        Profile
+                    </a>
+                    <div>
+                        <a>login</a>
+                        <a>sign-up</a>
+                        <a>logout</a>
+                        <div>nothing</div>
+                    </div>
+                </div>
             </nav>
         </header>
         {% block page_content %}{% endblock  %}
