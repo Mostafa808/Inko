@@ -1,0 +1,178 @@
+/*enforce box sizing*/
+html{
+    box-sizing: border-box;
+}
+html *{
+    box-sizing: inherit;
+}
+
+/*List Handler*/
+ul, ol{
+    list-style-type: none;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+}
+/*abstract dropdown*/
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+.dropdown > div{
+    display: none;
+    position: absolute;
+    height: fit-content;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 1rem;
+    z-index: 1;
+}
+.dropdown > div > * {
+    display: block;
+    align-content: center;
+    height: auto;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    border-radius: 0.4rem;
+
+    font-size: 0.8em;
+}
+.dropdown:hover > div,
+.dropdown.selected > div{
+    display: block;
+}
+.dropdown > *{
+    width: 100%;
+}
+/*Anchor Tag Rules*/
+a{
+    display: block;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    text-decoration: none;
+}
+a:link{
+    color: inherit;
+    cursor: pointer;
+}
+a:visited {
+    color: inherit;
+}
+/*Image Tag Rules*/
+img{
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    border-radius: 2rem;
+
+}
+/*abstract pop-up*/
+/*pop-up items should be inserted outside body tag!!*/
+.pop-up{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pop-up > *{
+    border-radius: 1rem;
+    margin: 1rem;
+    /*border rules*/
+    border-width: 0.18em;
+    border-style: solid;
+}
+.pop-up > * > *{
+    border-radius: 1rem;
+    margin: 1rem;
+}
+.not-pop-up{
+    display: none;
+}
+/*TODO loading animation*/
+
+/*Header Rules*/
+header{
+    /*size*/
+    height: 10vh;
+    width: 100%;
+    /*font*/
+    font-size: 1.3em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    /*positioning*/
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+/*Navigation Tag Rules*/
+nav{
+    text-align: center;
+    display: flex;
+    flex: auto;
+    height: 100%;
+}
+nav *{
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex: auto;
+}
+nav > ul{
+    margin-left: 4vw;
+    margin-right: 4vw;
+}
+nav > ul > li{
+    margin-left: 3vw;
+    margin-right: 3vw;
+    border-radius: 1rem;
+    transition: background-color 0.5s;
+}
+/*logo rules*/
+#logo{
+    margin-left: 0.1vw;
+    margin-right: 1.5vw;
+    padding-top: 0.5vh;
+    padding-bottom: 0.5vh;
+    flex: none;
+}
+/*body rules*/
+body{
+    margin: 0;
+}
+/*footer rules*/
+footer{
+    width: 100%;
+    height: 10vh;
+    justify-content: center;
+    align-items: center;
+}
+footer *{
+    height: 100%;
+}
+/*footer anchor rules*/
+footer a{
+    display: block;
+    height: fit-content;
+    width: fit-content;
+    transition: color 0.5s;
+}

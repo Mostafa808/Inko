@@ -1,0 +1,66 @@
+/*Dropdown Theme*/
+.dropdown:hover > div,
+.dropdown.selected > div{
+    background-color: rgb(216, 137, 9);
+}
+.dropdown > div > * {
+    background-color: rgb(50, 108, 3);
+}
+/*Anchor Theme*/
+a:link{
+    color: inherit;
+    
+}
+a:visited {
+    color: inherit;
+}
+
+/*pop-up theme*/
+.pop-up{
+    background-color: rgba(1, 1, 1, 0.6);
+}
+.pop-up > *{
+    background-color: wheat;
+    /*border color*/
+    border-color: rgb(2, 45, 89);
+}
+
+/*TODO loading animation Theme*/
+
+/*Header Theme*/
+header{
+    color: #ffffff;
+}
+/*Header Navigation Tag Theme*/
+header > nav{
+    background-color: royalblue;
+}
+
+header > nav > ul > li{
+    background-color: rgba(255, 0, 0, 0)
+}
+header > nav > ul > li:hover{
+    background-color: rgba(187, 124, 42, 0.8)
+}
+/*Header Logo Theme*/
+#logo{
+    background-color: rgba(1, 1, 1, 0)
+}
+/*Body Theme*/
+body{
+    background-color: #ffffff;
+    color: #111111;
+}
+/*Footer Theme*/
+footer{
+    /*footer background color*/
+    background-color: #111111;
+    /*footer font*/
+    color: white;
+    font-size: 1.2em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+/*Footer Anchor Theme*/
+footer a:hover{
+    color: #11cc11;
+}

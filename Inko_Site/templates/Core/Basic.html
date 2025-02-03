@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="{% static 'image/icon/logo.jpg' %}">
+        <title>Inko{%if page.subpage %}: {{page.subpage}}{%endif%}</title>
+        
+        <!--search engines section-->
+        <meta name="author" content="Mostafa Mohamed Farag Beshier"/>
+        <meta name="description" content="Inko is providing you templates to enhance your posters to market it. It also has AI assistant, email templates, academic templates, and more..." />
+        
+        <!--open graph protocol section-->
+        <meta property="og:title" content="Inko" />
+        <meta property="og:image" content="{% static 'image/icon/logo.jpg' %}" />
+        <meta property="og:description" content="Inko is providing you templates to enhance your posters to market it. It also has AI assistant, email templates, academic templates, and more..."/>
+        
+        <link rel="stylesheet" href="{% static 'css/Basic.css' %}">
+        <link rel="stylesheet" href="{% static 'css/BasicTheme.css' %}">
+        {% block styles  %}{% endblock %}
+        <script src ="{% static "js/Basic.js" %}"> </script>
+        {% block pre_scripts %}{% endblock %}
+    </head>
+    <body>
+        <!-- Header -->
+        <header>
+            <nav>
+                <ul>
+                    <li id="logo">
+                        <a href= "{{site_map.home}}">
+                            <img src="{% static 'image/icon/logo.jpg' %}" title="logo image" alt="logo image">
+                        </a>
+                    </li>
+                    <li>
+                        <a href= "{{site_map.home}}">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href= "{{site_map.ai_assistant}}">
+                            AI Assistant
+                        </a>
+                    </li>
+                    <li>
+                        <a href= "{{site_map.templates}}">
+                            Templates
+                        </a>
+                    </li>
+                    <li id="profile" class="dropdown">
+                        <a href= "{{site_map.profile}}">
+                            Profile
+                        </a>
+                        <div>
+                            <a>login</a>
+                            <a>sign-up</a>
+                            <a>logout</a>
+                            <div>nothing</div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        {% block page_content %}{% endblock  %}
+        <footer>
+            <div>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="{{site_map.terms}}">Terms</a>
+                        </li>
+                        <li>
+                            <a href="{{site_map.privacy}}">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="{{site_map.contact}}">Contact</a>
+                        </li>
+                        <li>
+                            <a href="{{site_map.facebook}}">Facebook</a>
+                        </li>
+                        <li>
+                            <a href="{{site_map.twitter}}">Twitter</a>
+                        </li>
+                        <li>
+                            <a href="{{site_map.linkedin}}">LinkedIn</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </footer>
+        {% block post_scripts %}{% endblock %}
+    </body>
+    <div class="pop-up">
+        <div>
+            <div><div>Please, buy our products.</br>I will pay you, please 😢</div></div>
+            <div><input type="button" value="accept" onclick="UI.switchPopUp(this);"></div>
+        </div>
+    </div>
+</html>

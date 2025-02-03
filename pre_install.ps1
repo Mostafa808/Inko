@@ -14,6 +14,12 @@ else{
     # adding private variables names here.
     Add-Content -Path ".env" -Value "google_aistudio_api = 0"
 }
+# install typescript using npm
+Set-Location .\Others\Packages
+npm install typescript --save-dev
+Set-Location ..\..
+# now you can just use npm exec --prefix ./Others/Packages -- tsc
 
+# Done
 Write-Host "Done..."
 Pause

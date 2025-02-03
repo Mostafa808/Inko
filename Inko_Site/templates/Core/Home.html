@@ -1,125 +1,86 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="icon" type="image/x-icon" href="{% static 'image/icon/logo.jpg' %}">
-    <title>Inko AI Writing Assistance</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-</head>
-<body>
-    <!-- Header Section -->
-    <header>
-        <nav>
-            <div class="logo">
-                <a href = "/">
-                    <img src="{% static 'image/icon/logo.jpg' %}" title="logo image" alt="logo image">
-                </a>
-            </div>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="#templates">Templates</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#resources">Resources</a></li>
-                <li><a href="#login">Login</a></li>
-            </ul>
-        </nav>
-    </header>
+{% extends "Core/Basic.html" %}
+{% block styles %}{% endblock %}
+{% block pre_scripts %}{% endblock %}
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <div class="hero-content">
+{% block page_content %}
+    <section>
+        <div>
             <h1>Write with the Help of AI</h1>
-            <p>Generate content quickly and efficiently with Inko’s AI-powered writing tools.</p>
-            <button id="startWritingBtn">Start Writing Now</button>
+        </div>
+        <div>
+            <p>Generate content quickly and efficiently with Inko's AI-powered writing tools.</p>    
         </div>
     </section>
 
-    <!-- How AI Writing Assistance Works -->
-    <section id="how-it-works">
-        <div class="section-title">
+    <section>
+        <div>
             <h2>How AI Writing Assistance Works</h2>
         </div>
-        <div class="steps">
-            <div class="step">
+        <ul>
+            <li>
                 <h3>1. Choose Your Type</h3>
                 <p>Select the type of writing you need (email, blog, content, etc.).</p>
-            </div>
-            <div class="step">
+            </li>
+            <li>
                 <h3>2. Input Your Prompt</h3>
                 <p>Provide a brief description or prompt to guide the AI.</p>
-            </div>
-            <div class="step">
+            </li>
+            <li>
                 <h3>3. Review the Text</h3>
                 <p>Let the AI generate your content for review.</p>
-            </div>
-            <div class="step">
+            </li>
+            <li>
                 <h3>4. Refine and Finalize</h3>
                 <p>Edit and fine-tune your content before publishing.</p>
-            </div>
-        </div>
+            </li>
+        </ul>
     </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials">
-        <div class="section-title">
+    <section>
+        <div>
+            <h2>Key Features of AI Assistance</h2>
+        </div>
+        <ul>
+            <li>Grammar Check</li>
+            <li>Tone Suggestions</li>
+            <li>Content Enhancement</li>
+            <li>Summarization</li>
+        </ul>
+    </section>
+    
+    <section>
+        <div>
+            <h2>Benefits of Using AI for Writing</h2>
+        </div>
+        <ul>
+            <li>Saves Time</li>
+            <li>Improves Writing Quality</li>
+            <li>Ensures Consistency</li>
+        </ul>
+    </section>
+
+    <section>
+        <div>
             <h2>What Our Users Say</h2>
         </div>
-        <div class="testimonials-container">
-            <div class="testimonial">
+        <div>
+            <div>
                 <p>"Inko AI Writing Assistance saved me hours of work! It's a game-changer."</p>
                 <p>- John Doe, Freelancer</p>
             </div>
-            <div class="testimonial">
+            <div>
                 <p>"The content generated is always high quality and fits my tone perfectly."</p>
                 <p>- Jane Smith, Content Creator</p>
             </div>
         </div>
     </section>
-
-    <!-- Related Resources Section -->
-    <section id="resources">
-        <div class="section-title">
-            <h2>Explore More Resources</h2>
-        </div>
-        <div class="resources-links">
-            <a href="#blog">Blog</a>
-            <a href="#guide">Writing Guide</a>
-        </div>
-        <button id="exploreResourcesBtn">Explore Resources</button>
-    </section>
-
-    <!-- Call to Action Section -->
-    <section id="cta">
-        <div class="cta-content">
+     <section>
+        <div>
             <h2>Start Writing with AI Today!</h2>
-            <p>Generate content faster, smarter, and with ease using Inko’s AI tools.</p>
-            <button id="startWritingBtn3">Start Writing with AI</button>
+            <p>Generate content faster, smarter, and with ease using Inko's AI tools.</p>
+            
         </div>
     </section>
+{% endblock %}
 
-    <!-- Footer Section -->
-    <footer>
-        <div class="footer-content">
-            <nav>
-                <ul>
-                    <li><a href="#terms">Terms</a></li>
-                    <li><a href="#privacy">Privacy Policy</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="social-media">
-                <a href="#facebook">Facebook</a>
-                <a href="#twitter">Twitter</a>
-                <a href="#linkedin">LinkedIn</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- JavaScript for AI text generation -->
-    <script src="{% static 'js/scripts.js' %}"></script>
-</body>
-</html>
+{% block post_scripts %}{% endblock %}

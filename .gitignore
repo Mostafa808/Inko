@@ -6,3 +6,5 @@ SSH_Keys/
 *__pycache__*
 *.sqlite*
 *.vscode*/
+Others/Packages/*
+Others/Scripts/*.js
