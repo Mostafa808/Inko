@@ -5,6 +5,14 @@ SSH_Keys/
 *__pycache__/
 *__pycache__*
 *.sqlite*
+
 *.vscode*/
+
 Others/Packages/*
+!Others/Packages/package.json
+!Others/Packages/webpack.config.js
+
 Others/Scripts/*.js
+Inko_Site/resources/js/bundles/
+
+*vsdx
