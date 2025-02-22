@@ -1,3 +1,4 @@
+import Cookies from 'js-cookie'; //TODO: add cookies to website
 interface Attribute{
     key:string,
     value:string
@@ -96,7 +97,6 @@ class UI{
             for(let [key, state] of this.stateChangedArray){
                 if(state.changed){
                     state.method();
-                    console.log(key, " is updated.")
                 }
             }
             this.stateChanged = false;
@@ -157,9 +157,27 @@ class UI{
         UI.stateChanged = true;
     }
 }
-// configure UI system
-let mainLoop:number = setInterval(UI.render.bind(UI), 60);
-UI.stateChangedArray = new Map()
-// add popup state tracker
-let popupState:State = {changed: false, method: UI.updatePopUp}
-UI.stateChangedArray.set(statesNames.popup, popupState)
+function initialize():boolean{
+    // configure UI system
+    let mainLoop:number = setInterval(UI.render.bind(UI), 60);
+    UI.stateChangedArray = new Map()
+    // add popup state tracker
+    let popupState:State = {changed: false, method: UI.updatePopUp}
+    UI.stateChangedArray.set(statesNames.popup, popupState)
+    // test cookies library
+    //Cookies.set("name", "testing 1 2 3", {expires: 7});
+    //console.log(Cookies.get("name"));
+    return true;
+}
+// **export segments**
+
+// export functions
+export {initialize}
+// export classes
+export {ElementHandler, UI}
+// export interfaces
+export {Attribute, State}
+// export enums
+export {statesNames}
+// export variables
+export {Cookies}

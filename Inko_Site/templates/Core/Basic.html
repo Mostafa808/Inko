@@ -19,7 +19,9 @@
         <link rel="stylesheet" href="{% static 'css/Basic.css' %}">
         <link rel="stylesheet" href="{% static 'css/BasicTheme.css' %}">
         {% block styles  %}{% endblock %}
-        <script src ="{% static "js/Basic.js" %}"> </script>
+        <script src ="{% static "js/bundles/Basic.bundle.js" %}"> </script>
+        <script>BasicLib.initialize()</script>
+
         {% block pre_scripts %}{% endblock %}
     </head>
     <body>
@@ -93,7 +95,7 @@
     <div class="pop-up">
         <div>
             <div><div>Please, buy our products.</br>I will pay you, please 😢</div></div>
-            <div><input type="button" value="accept" onclick="UI.switchPopUp(this);"></div>
+            <div><input type="button" value="accept" onclick="BasicLib.UI.switchPopUp(this);"></div>
         </div>
     </div>
 </html>
