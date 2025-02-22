@@ -4,6 +4,9 @@ Write-Host "Initializing Python Virtual Environment..."
 python -m venv $Env_Name
 Write-Host $Env_Name "was created."
 Write-Host "Installing Python Packages..."
+
+& .\$Env_Name\Scripts\activate
+
 python -m pip install -r "requirements.txt"
 if (Test-Path -Path ".env"){
     Write-Host ".env file already exists."
@@ -18,7 +21,6 @@ else{
 Set-Location .\Others\Packages
 npm install
 Set-Location ..\..
-# now you can just use npm exec --prefix ./Others/Packages -- tsc
 
 # Done
 Write-Host "Done..."
