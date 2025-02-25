@@ -17,4 +17,8 @@ Inko_Site/resources/js/bundles/
 
 *vsdx
 
-Inko_Site\media\*
+Inko_Site/media/*
+
+
+Inko_Site/*/migrations/*
+!Inko_Site/*/migrations/__init__.py

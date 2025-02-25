@@ -19,9 +19,16 @@ class Price_Plan(models.TextChoices):
 # Full Name model
 class Full_Name(models.Model):
     id = models.AutoField(primary_key=True)
-    first_name = models.CharField(max_length=20)
-    middle_name = models.CharField(max_length=20, blank=True, default='')
-    last_name = models.CharField(max_length=20)
+    first_name = models.CharField(max_length=30)
+    middle_name = models.CharField(max_length=30, blank=True, default='')
+    last_name = models.CharField(max_length=30)
+    # full name viewer
+    def __str__(self) -> str:
+        full_name = self.first_name
+        if self.middle_name:
+            full_name += f" {self.middle_name}"
+        full_name += f" {self.last_name}"
+        return full_name
 # Address model
 class Address(models.Model):
     id = models.AutoField(primary_key=True)
@@ -30,12 +37,26 @@ class Address(models.Model):
     governorate = models.CharField(max_length=20, blank=True, default='')
     country = models.CharField(max_length=20, blank=True, default='')
     zip_code = models.CharField(max_length=10, blank=True, default='')
+    # address viewer
+    def __str__(self) -> str:
+        address = self.address
+        if self.city:
+            address += f", {self.city}"
+        if self.governorate:
+            address += f", {self.governorate}"
+        if self.country:
+            address += f", {self.country}"
+        if self.zip_code:
+            address += f", {self.zip_code}"
+        return address
 # User Data Credentials
 class Credentials(models.Model):
     username = models.CharField(max_length=15, primary_key=True, validators=[custom_validators.User_Data_Validator.validate_username])
     email = models.EmailField(unique=True)
     # hashed_password is a hash of the username, password, and salt
     hashed_password = models.CharField(max_length=64)
+    def __str__(self) -> str:
+        return self.username
     
 # User Data model
 class User_Data(models.Model):
@@ -46,6 +67,8 @@ class User_Data(models.Model):
     address = models.OneToOneField(Address, on_delete=models.CASCADE, null=True)
     date_of_birth = models.DateField()
     gender = models.CharField(max_length=1, choices=Gender.choices, default=Gender.non_specified)
+    def __str__(self) -> str:
+        return str(self.authantication)+f" ({self.full_name})"
 
 # subscription model
 class Subscription_Data(models.Model):
@@ -54,10 +77,16 @@ class Subscription_Data(models.Model):
     start_date = models.DateField()
     end_date = models.DateField()
     price = models.PositiveIntegerField()
+    # subscription viewer
+    def __str__(self) -> str:
+        return self.subscription_id
 # User entity
 class User(models.Model):
     user_data = models.OneToOneField(User_Data, on_delete=models.CASCADE, primary_key=True)
     subscription = models.OneToOneField(Subscription_Data, on_delete=models.CASCADE)
+    # user viewer
+    def __str__(self) -> str:
+        return str(self.user_data)
 # Templete entity
 class Template(models.Model):
     id = models.AutoField(primary_key=True)
@@ -68,6 +97,9 @@ class Template(models.Model):
     published_date = models.DateField()
     view_count = models.PositiveIntegerField()
     download_count = models.PositiveIntegerField()
+    # template viewer
+    def __str__(self) -> str:
+        return self.name
 # Session entity
 class Session(models.Model):
     session_id = models.CharField(max_length=64, primary_key=True)
@@ -75,5 +107,7 @@ class Session(models.Model):
     # OTP encryption serial keys
     key = models.CharField(max_length=64)
     next_key = models.CharField(max_length=64)
-    
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    # session viewer
+    def __str__(self) -> str:
+        return self.session_id
