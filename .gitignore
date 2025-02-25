@@ -16,3 +16,5 @@ Others/Scripts/*.js
 Inko_Site/resources/js/bundles/
 
 *vsdx
+
+Inko_Site\media\*
