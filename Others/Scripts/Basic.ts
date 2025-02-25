@@ -51,6 +51,10 @@ class ElementHandler{
         return element;
     }
     static addRuleSet(element:Element, styles: Attribute[] = []): Element{
+        // if no rules are given return the element as is
+        if(styles.length == 0){
+            return element;
+        }
         let ruleSet = "";
         let ruleSetArray = this.getRuleSet(element);
         for(let rule of styles){
@@ -69,6 +73,10 @@ class ElementHandler{
         return element;
     }
     static changeRuleSet(element:Element, styles: Attribute[] = []): Element{
+        // if no rules are given return the element as is
+        if(styles.length == 0){
+            return element;
+        }
         let ruleSet = "";
         let ruleSetArray = this.getRuleSet(element);
         for(let rule of styles){
